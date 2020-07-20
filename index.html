@@ -1,0 +1,681 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>Câmara Municipal de Curvelo</title>
+  
+  <link rel="stylesheet" href="css/style.css"  type="text/css"/>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon">
+         
+  <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script src="jquery-scrolltofixed-min"></script>
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+          <script type='text/javascript' language='Javascript'>
+                  var scrolltotop={
+                  //startline: Integer. Number of pixels from top of doc scrollbar is scrolled before showing control
+                  //scrollto: Keyword (Integer, or "Scroll_to_Element_ID"). How far to scroll document up when control is clicked on (1=top).
+                  setting: {startline:100, scrollto: 0, scrollduration:1000, fadeduration:[500, 100]},
+                  controlHTML: '<img src="https://lh3.googleusercontent.com/e-nENuT-AOpATAxMTKq9hPMfCd8_kHUHEMYrF60ym2Y=s50-no"/>', //HTML for control, which is auto wrapped in DIV w/ ID="topcontrol"
+                  controlattrs: {offsetx:5, offsety:5}, //offset of control relative to right/ center of window corner
+                  anchorkeyword: '#top', //Enter href value of HTML anchors on the page that should also act as "Scroll Up" links
+                  state: {isvisible:false, shouldvisible:false},
+                  scrollup:function(){
+                  if (!this.cssfixedsupport) //if control is positioned using JavaScript
+                    this.$control.css({opacity:0}) //hide control immediately after clicking it
+                    var dest=isNaN(this.setting.scrollto)? this.setting.scrollto : parseInt(this.setting.scrollto)
+                  if (typeof dest=="string" && jQuery('#'+dest).length==1) //check element set by string exists
+                    dest=jQuery('#'+dest).offset().top
+                  else
+                    dest=0
+                    this.$body.animate({scrollTop: dest}, this.setting.scrollduration);
+                  },
+                  keepfixed:function(){
+                      var $window=jQuery(window)
+                      var controlx=$window.scrollLeft() + $window.width() - this.$control.width() - this.controlattrs.offsetx
+                      var controly=$window.scrollTop() + $window.height() - this.$control.height() - this.controlattrs.offsety
+                      this.$control.css({left:controlx+'px', top:controly+'px'})
+                  },
+                  togglecontrol:function(){
+                    var scrolltop=jQuery(window).scrollTop()
+                    if (!this.cssfixedsupport)
+                      this.keepfixed()
+                      this.state.shouldvisible=(scrolltop>=this.setting.startline)? true : false
+                    if (this.state.shouldvisible && !this.state.isvisible){
+                      this.$control.stop().animate({opacity:1}, this.setting.fadeduration[0])
+                      this.state.isvisible=true
+                  }
+                    else if (this.state.shouldvisible==false && this.state.isvisible){
+                      this.$control.stop().animate({opacity:0}, this.setting.fadeduration[1])
+                      this.state.isvisible=false
+                    }
+                  },
+                  init:function(){
+                    jQuery(document).ready(function($){
+                    var mainobj=scrolltotop
+                    var iebrws=document.all
+                    mainobj.cssfixedsupport=!iebrws || iebrws && document.compatMode=="CSS1Compat" && window.XMLHttpRequest //not IE or IE7+ browsers in standards mode
+                    mainobj.$body=(window.opera)? (document.compatMode=="CSS1Compat"? $('html') : $('body')) : $('html,body')
+                    mainobj.$control=$('<div id="topcontrol">'+mainobj.controlHTML+'</div>')
+                    .css({position:mainobj.cssfixedsupport? 'fixed' : 'absolute', bottom:mainobj.controlattrs.offsety, right:mainobj.controlattrs.offsetx, opacity:0, cursor:'pointer'})
+                    .attr({title:'Voltar ao Topo'})
+                    .click(function(){mainobj.scrollup(); return false})
+                    .appendTo('body')
+                      if (document.all && !window.XMLHttpRequest && mainobj.$control.text()!='') //loose check for IE6 and below, plus whether control contains any text
+                          mainobj.$control.css({width:mainobj.$control.width()}) //IE6- seems to require an explicit width on a DIV containing text
+                          mainobj.togglecontrol()
+                          $('a[href="' + mainobj.anchorkeyword +'"]').click(function(){
+                          mainobj.scrollup()
+                      return false
+                      })
+                    $(window).bind('scroll resize', function(e){
+                    mainobj.togglecontrol()
+                  })
+                  })
+                  }
+                  }
+                  scrolltotop.init()
+          </script>
+          
+            <script type='text/javascript' language='Javascript'>
+                            var offset = $('#menu_principal').offset().top;
+                            var $meuMenu = $('#menu_principal');
+                            $(document).on('scroll', function () {
+                                if (offset <= $(window).scrollTop()) {
+                                    $meuMenu.addClass('fixar');
+                                } else {
+                                    $meuMenu.removeClass('fixar');
+                                }
+                            });
+
+            </script>
+
+  </head>
+  
+
+  <body>
+
+
+   <!-- Container principal -->
+    <div id="conteudo">
+        
+          <!-- Topo -->
+          <div id="topo">
+              <a href="index.html">
+                <div class="container">
+
+                    <div id="cab" class="row">
+
+                        <div id="topo" class="col-sm-4">
+                            <img src="imagens/logo3.png" class="img-responsive" align="right"/>
+                        </div>
+
+
+                        <div id="topo2" class="col-sm-8">
+                            <img src="imagens/topo2.png" class="img-responsive" align="left"/>
+                        </div>
+
+                    </div>
+                </div><!-- FIM do Container do topo -->
+              </a>
+          </div>
+          <!-- FIM do Topo -->
+        
+
+          <!-- Menu-->
+           <div id="menu">
+              
+              <nav id="menu_principal" class="navbar navbar-inverse">
+              
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span> 
+                            </button>
+                          <!--   <a class="navbar-brand" href="#">Inicial</a>  desativado - coloca tipo um home grande-->
+                        </div>
+                      
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                        
+                                <ul class="nav navbar-nav">
+                                  <li><a href="index.html"> <span class="glyphicon glyphicon-home"></span> Início</a></li> 
+                                  <!-- class="active" (DENTRO DO LI) PARA DEIXAR UMA COR ATIVA EM CIMA DO BOTÃO -->
+                                  <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="institucional.html">Institucional <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                              <li id="navegador"><a href="institucional.html">Conheça nossa Câmara</a></li>
+                                              <li id="navegador"><a href="#">Galeria de Presidentes</a></li>
+                                         
+                                              
+                                        </ul>
+                                  <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="vereadores.html">Vereadores <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                              <li id="navegador"><a href="vereadores.html">Conheça nossos vereadores</a></li>
+                                              <li id="navegador"><a href="#">Mesa diretora</a></li>
+                                              <hr/>
+                                              <li id="navegador"><a href="#">19ª Legislatura - 01/01/2017 a 31/12/2020</a></li>
+                                              <li id="navegador"><a href="#">18ª Legislatura - 01/01/2013 a 31/12/2016</a></li>
+                                              <li id="navegador"><a href="#">17ª Legislatura - 01/01/2009 a 31/12/2012</a></li>
+                                              <li id="navegador"><a href="#">16ª Legislatura - 01/01/2005 a 31/12/2008</a></li>
+                                              <li id="navegador"><a href="#">15ª Legislatura - 01/01/2001 a 31/12/2004</a></li>
+                                              <li id="navegador"><a href="#">14ª Legislatura - 01/01/1997 a 31/12/2000</a></li>
+                                              
+                                        </ul>
+                                  </li>
+                                  <!-- fim de vereadores -->
+                                  
+                                  <!-- Início de Legislação -->
+                                  
+                                   <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="leis.html">Legislação<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                              <li id="navegador"><a href="Leis.html">Base de Leis</a></li>
+                                              <li id="navegador"><a href="#">Proposições de Leis Tramitadas</a></li>
+                                              <li id="navegador"><a href="#">Protocolo online</a></li>
+                                        </ul>
+                                  </li>
+                                  
+                                  <!-- fim de legislação-->
+                                              
+                                  
+                                  <li><a href="#">Notícias</a></li> 
+                                  <li><a href="#">Transparência</a></li> 
+                                  <li><a href="#">Licitações</a></li> 
+                                  <li><a href="#">TV Câmara</a></li>
+                                  
+                                  <li><a href="#">Agenda Semanal</a></li>  
+                                  <li><a href="contato.html"><span class="glyphicon glyphicon-earphone"></span> Contato</a></li> 
+
+                                </ul>
+                                 <!-- desativar o login 
+                                <ul class="nav navbar-nav navbar-right">
+                                 
+                                  <li><a href="#"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+                                  -->
+                                  <!--
+                                  <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Webmail</a></li>
+                                  
+                                </ul>-->
+                        </div> <!--Fim do collapse navbar-collapse" id="myNavbar -->
+                        
+                    </div> <!--Fim do container Fluid do menu -->
+              </nav>
+          </div>          
+          <!-- fim do menu -->
+
+          <!-- Container Principal -->
+          <div id="geral">
+        		   
+                <!--Redes Sociais e Buscador --> 
+                <div class="container-fluid">
+
+                        <div id="redes_sociais_master" class="row">
+
+                            <div class="col-sm-2" id="redes_sociais">
+                                <a href="https://www.facebook.com/camaradecurvelo" target="_blank" title="Acesse nosso Facebook">
+                                  <img src="imagens/facebook.png" class="img-responsive" >
+                                </a>  
+                            </div>  
+
+                            <!-- Buscador-->  
+
+                            <div class="col-sm-10" id="buscador" align="right">
+        						          
+                                  <span id="img_busca" class="glyphicon glyphicon-search"></span>
+                                  <form action="" class="navbar-form pull-right">
+                                      <input type="search" class="span2" alt="Pesquise no site" value="" placeholder="O que você procura?"/>
+                                      <button class="btn btn-inverse">Buscar</button>
+                                  </form>
+                                  <!-- <hr/> -->
+                                                 
+                            </div>
+                        </div>
+                </div>  <!-- fim da redes_sociais_master -->     
+    
+    
+                <div  class="container-fluid">
+                      <div id="painel01" class="row">
+                       
+                            <div class="col-sm-4" id="painel_transparencia">
+                              <div class="container-fluid">
+                                <div class="row">
+                           
+                               <a href="paineldatransparencia.html"><p id="estilo_fonte_especifica"> painel da transparência </p></a>
+                                  <p id="estilo_fonte_pequena" align="">
+                                   <b>10/07/2017 - Processo licitatório 22/2017</b><br/>
+                                    ATA DE JULGAMENTO DE PROPOSTA E HABILITAÇÃO<br>
+                                    <p id="estilo_fonte_pequena" align="right"> <a href="#">Veja mais...</a></p>
+                                  </p>
+                                  <p id="estilo_fonte_pequena" align="">
+                                    <b>07/07/2017 - Processo licitatório 23/2017</b><br/>
+                                    ATA DE JULGAMENTO DE PROPOSTA E HABILITAÇÃO  
+                                    <p id="estilo_fonte_pequena" align="right"><a href="#">Veja mais...</a></p>
+                                  </p>
+                                  <p id="estilo_fonte_pequena" align="">
+                                    <b>07/07/2017 - Processo licitatório 18/2017</b><br/>
+                                    ATA DE JULGAMENTO DE PROPOSTA E HABILITAÇÃO 
+                                    <p id="estilo_fonte_pequena" align="right"><a href="#">Veja mais...</a></p>
+                                  </p>
+                                  <p id="estilo_fonte_pequena" align="">
+                                    <b>06/07/2017 - PO - Portarias 344/2017</b><br/>
+                                    ESTABELECE O EXPEDIENTE DE TRABALHO NA CÂMARA MUNICIPAL DE CURVELO NO DIA 07 DE ...
+                                    <p id="estilo_fonte_pequena" align="right"><a href="#">Veja mais...</a></p>
+                                  </p>
+                                </div>
+                              </div>  
+                            </div>
+                            
+                            <div class="col-sm-4" id="rotativo" >
+                                      <div>
+                                      <a href="noticias.html"><p id="estilo_fonte_especifica">Notícias</p></a>
+                                    </div>
+                                      <div id="carrossel">
+                                          <p id="estilo_fonte_especifica"></p>
+                                          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                              <!-- Indicators -->
+                                              <!--
+                                              <ol class="carousel-indicators">
+                                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                              </ol>
+                                              -->
+                                              <!-- Wrapper for slides -->
+                                              <div class="carousel-inner" role="listbox">
+                                                <div class="item active">
+                                                  <img src="imagens/car3.png" alt="Notícia 01" class="img-responsive" width:"430px" height:"200px">
+                                                      <a href="#">
+                                                        <div id="descricao" class="container-fluid">
+                                                            <p>Presidente Geraldo Moreira apresenta projeto importante para o desenvolvimento de Curvelo</p>
+                                                        </div>
+                                                      </a>
+                                                  <!--<div class="carousel-caption">
+                                                    Presidente Geraldo Moreira apresenta projeto importante para o desenvolvimento de Curvelo 
+                                                  </div>-->
+                                                </div>
+
+                                                <div class="item">
+                                                  <img src="imagens/car1.png" alt="Notícia 02" class="img-responsive" width:"430px" height:"200px">
+                                                    <a href="#">  
+                                                      <div id="descricao" class="container-fluid">
+                                                          <p>Copasa realiza coleta de água para análise</p>
+                                                      </div>  
+                                                    </a>
+                                                  <!--  
+                                                  <div class="carousel-caption">
+                                                    Copasa realiza coleta de água para análise
+                                                  </div>  -->
+                                                </div>
+                                              
+
+
+                                                <div class="item">
+                                                  <img src="imagens/car2.jpg" alt="Notíca 03" class="img-responsive" width:"430px" height:"200px">
+                                                    <a href="#">
+                                                      <div id="descricao" class="container-fluid">
+                                                          <p>Falecimento de ex-prefeito de Curvelo</p>                                                      
+                                                      </div>  
+                                                    </a>
+                                                  <!--  
+                                                  <div class="carousel-caption">
+                                                    Falecimento de ex-prefeito de Curvelo
+                                                  </div>
+                                                  -->
+                                                </div>
+                                                
+                                              </div>
+
+                                              <!-- Controls -->
+                                              <a class="left carousel-control" href="#carousel-example-generic" title="Anterior" onmouseover="" role="button" data-slide="prev">
+                                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                <span class="sr-only">Anterior</span>
+                                              </a>
+                                              <a class="right carousel-control" href="#carousel-example-generic" title="Próximo" role="button" data-slide="next" alt="Próximo">
+                                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                <span class="sr-only">Próximo</span>
+                                              </a>
+                                            </div>
+
+                                      </div>                                          
+                            
+                                      <!--
+                                      <div id="banner" class="row text-center">
+                                       
+                                        
+                                       
+                                        <p id="estilo_fonte_especifica">Notícias</p>
+                                      
+                                      </div>	
+                              -->
+                                
+                            </div>  <!--rotativo-->
+                           
+                            
+                        <div class="col-sm-4" id="" >
+                          <a href="noticias.html">
+                            <p id="estilo_fonte_especifica"> Mais notícias</p>
+                          </a>
+                            <div id="interno2">
+                              <a href=".html" id="estilo_fonte_pequena">      
+                                Nos dias 24 e 25 de agosto, a Câmara Municipal de Curvelo irá sediar o Encontro Técnico do Tribunal de...
+                              </a> 
+                              <br> 
+                              <br>
+                              <a href=".html" id="estilo_fonte_pequena">    
+                                Começa hoje o 3º Mega Feirão Curvelo. O evento, promovido pela CDL(Câmara de Dirigente Lojistas), tem como principal objetivo o...
+                              </a>
+                              <br> 
+                              <br>
+                              <a href=".html" id="estilo_fonte_pequena">    
+                                Começa hoje o 3º MDe 1 a 7 de agosto são realizadas ações em todo o mundo para promover a Semana Mundial do Aleitamento...
+                              </a>
+                              <br> 
+                              <br>
+                              <a href=".html" id="estilo_fonte_pequena">  
+                                A Câmara de Curvelo segue a todo vapor. Hoje pela manhã, a Mesa Diretora nas pessoas dos vereadores Geraldo Veterinário,...
+                              </a>
+                              <br> 
+                              <br>
+                              <a href=".html" id="estilo_fonte_pequena">  
+                                Nos dias 24 e 25 de agosto, a Câmara Municipal de Curvelo irá sediar o Encontro Técnico do Tribunal de..
+                              </a>
+                            </div>
+                         
+                        </div>
+
+
+                               
+                      </div> <!-- row -->
+                </div> <!--content fluid -->
+                <!-- FIM painel01 - Container-->
+        
+
+                    <!--        para colocar a faixa em cima da foto      
+                            <div id="descricao" class="container-fluid">
+                            Audiência Pública referente a COPASA em Curvelo para tratar da qualidade da água.
+                            </div>
+                    -->
+                    <!--        
+                        <div id="detalhe" class="transparencia-300 transparencia">
+                            
+                        </div>
+                    -->        
+
+                     <!--
+                          Ouvidoria | Parlamento | Câmara Intinerante
+                      -->
+    
+
+                <!-- 03 parte do site -->
+
+                <div class="container-fluid" id="par3">
+                  <hr style="border-top: 1px solid #fff;">
+                    <div class="row text-center" id="terceira_camada">
+
+                      
+                        <div class="col-sm-4 container-fluid">
+                            
+                            <a href=""> 
+                              <div id="banner01">
+                                                    
+                              <!--  <p id="estilo_fonte_especifica">Contas Públicas</p>-->
+                               CPI <br/> COPASA
+                             
+                              </div>  
+                            </a>
+                            
+                            <hr style="border-top: 1px solid #fff;">
+                            
+                            <a href=""> 
+                              <div id="banner02">
+                                Transparência
+                              </div>
+                            </a> 
+                        </div> 
+                        
+
+                        
+                        <div class="col-sm-4 container-fluid">
+                          <a href="">
+                            <div id="banner03">Contas Públicas
+
+                             <!--
+                                <IMG SRC="imagens/contas_publicas.png"/> -->
+                            </div>
+                          </a>
+                            
+                          <hr style="border-top: 1px solid #fff;">
+
+                            <a href="">
+                              <div id="banner04">
+                                Desaparecidos<br/>
+                                Lei 176/2007
+                              </div>
+                            </a>
+                            
+                        </div>
+
+                        <div class="col-sm-4 container-fluid" id="painel03_container">
+                              <div>
+                                <p id="estilo_fonte_especifica">Links importantes</p>
+                              </div>
+                              <div class="container-fluid" >
+                                <div class="row text-center" id="painel03">
+                                  
+                                  <a href="#"><p id="fonte_especial">Cadastro - Audiência pública - CPI da Copasa</p></a>
+                                  <a href="#"><p id="fonte_especial">Cadastro - Fornecedores</p></a>
+                                  <a href="#"><p id="fonte_especial">e-SIC</p></a>
+                                  <a href="#"><p id="fonte_especial">Links úteis</p></a>
+                                  <a href="#"><p id="fonte_especial">Prefeitura Municipal de Curvelo</p></a>
+                                  
+                                  
+                                </div> 
+                              </div>   
+                                   <!-- <iframe allowtransparency="yes" scrolling="no" src="http://www.tempoagora.com.br/ta-widgets?cidades=Curvelo-MG&amp;tipo=horizontal" width="300" height="200" frameborder="0"></iframe> -->
+                            
+                            </div>
+                            
+                    </div><!--<hr style="border-top: 1px solid #fff;"> -->
+                </div>
+               
+<!-- Fim da terceira parte do site -->
+
+                <div class="container-fluid" id="camada2">
+                    <div class="row text-center" id="segunda_camada">                 
+
+                        
+                        
+
+                            <a href="ouvidoria.html">
+                              <div class="col-sm-2" id="" >
+                                <p id="estilo_fonte_especifica"> Ouvidoria</p>
+                                  <img id="ouvidoria_img" src="imagens/ouvidoria_novo.png" />
+
+                              </div>
+                            </a>  
+                            
+
+                        
+                           
+                            
+                            
+                            <a href="ParlamentoJovem.html">
+                              <div class="col-sm-2" id="" >
+                                  
+                                  <p id="estilo_fonte_especifica"> Parlamento jovem</p>
+                                  <img id="pj_img" src="imagens/pj2.png"/>                              
+                              </div>  
+                            </a>
+
+                             <a href="licitacao.html">
+                              <div class="col-sm-2" id="" >
+                                  <p id="estilo_fonte_especifica"> Licitações</p>
+                                  <img id="licitacao" src="imagens/licitacao_.png"  alt="Licitações"/>  
+
+                              </div>
+                            </a>
+
+                       
+
+                        
+                   
+                            <a href="camaraitinerante.html">
+                              <div class="col-sm-2" id="" >
+                                  <p id="estilo_fonte_especifica"> Câmara Itinerante</p>
+                                  <img id="cam_intinerante" src="imagens/cam_intinerante.png" width="140px" height="140px" />                                  
+                              </div>
+                            </a>
+                      
+                             <div class="col-sm-4 text-center" id="youtube" >
+                                <p id="estilo_fonte_especifica"> Reunião</p>
+                                <center>
+                                  <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/videoseries?list=PLeExm0ra31cbA_J0i3K5NihgGXRYcrXZo" width="150" height="200" frameborder="0" style="position:absolute;width:80%;height:75%; right:10%; left:10%" allowfullscreen></iframe>
+                                  </div>
+                                </center>
+                        </div>
+                            <br>
+                            
+                        
+                        </div> 
+                    </div>                     
+
+                <div id="proposicoes" class="container-fluid">
+
+              
+                  <div class="row" id="propo">
+                    <div id="estilo_fonte">
+                       <h3>Proposições</h3>
+                    </div>
+                  </div> 
+                  
+                    <div class="row text-center" id="propo01">
+                        
+
+                        <div class="col-sm-1" id="estilo_fonte_pequena" ><a href="#"><img id="dario" src="imagens/Ver_Antonio.jpg" alt="..." class="img-thumbnail">
+                          <br/>
+                          Antônio Gonçalves</a></div>
+                        
+                  <div class="col-sm-1" id="estilo_fonte_pequena" > </div>
+                        
+                        <div class="col-sm-1" id="estilo_fonte_pequena" ><a href="#"><img id="dario" src="imagens/Ver_Dario.jpg" alt="..." class="img-thumbnail">
+                          <br/>Dário Augusto</a></div>
+
+                  <div class="col-sm-1" id="estilo_fonte_pequena" > </div>
+
+
+                        <div class="col-sm-1" id="estilo_fonte_pequena" ><a href="#"><img id="dario" src="imagens/Ver_Duarte.jpg" alt="..." class="img-thumbnail"> <br/>Duarte Severino</a></div>
+                        
+                  <div class="col-sm-1" id="estilo_fonte_pequena" > </div>                        
+
+                        <div class="col-sm-1" id="estilo_fonte_pequena" ><a href="#"><img id="dario" src="imagens/Ver_Edmilson.jpg" alt="..."class="img-thumbnail"> <br/>Edmilson Dutra</a></div>
+                        
+                  <div class="col-sm-1" id="estilo_fonte_pequena" > </div>        
+
+                        <div class="col-sm-1" id="estilo_fonte_pequena" ><a href="#"><img id="dario" src="imagens/Ver_Edvaldo.jpg" alt="..." class="img-thumbnail"> <br/>Edvaldo Antônio</a></div>
+                    </div>
+                    
+                    <hr style="border-top: 1px solid #fff;">
+
+                    <div class="row text-center" id="propo01"> 
+
+                        <div class="col-sm-1" id="estilo_fonte_pequena" ><a href="#"><img id="dario" src="imagens/Ver_Geraldo.jpg" alt="..." class="img-thumbnail"><br/>Geraldo Moreira</a></div>
+                        
+<div class="col-sm-1" id="estilo_fonte_pequena" > </div>
+                        <div class="col-sm-1" id="estilo_fonte_pequena" ><a href="#"><img id="dario" src="imagens/Ver_Gustavo.jpg" alt="..." class="img-thumbnail"> <br/>Gustavo Nascimento</a></div>
+                        
+<div class="col-sm-1" id="estilo_fonte_pequena" > </div>
+                        <div class="col-sm-1" id="estilo_fonte_pequena" ><a href="#"><img id="dario" src="imagens/Ver_Humberto.jpg" alt="..."class="img-thumbnail">
+                        <br/>Humberto Freire</a></div>
+                        
+<div class="col-sm-1" id="estilo_fonte_pequena" > </div>
+                        <div class="col-sm-1" id="estilo_fonte_pequena" ><a href="#"><img id="dario" src="imagens/Ver_Jose.jpg" alt="..." class="img-thumbnail"> 
+                        <br/>José Rafael</a></div>
+                        
+<div class="col-sm-1" id="estilo_fonte_pequena" > </div>
+
+                        <div class="col-sm-1" id="estilo_fonte_pequena" ><a href="#"><img id="dario" src="imagens/Ver_KarlaA.png" alt="..." class="img-thumbnail">
+                        <br/> Karla Araújo</div>
+                    </div>
+                    
+                    <hr style="border-top: 1px solid #fff;">
+                    
+                    <div class="row text-center" id="propo01">
+
+                        <div class="col-sm-1" id="estilo_fonte_pequena" ><a href="#"><img id="dario" src="imagens/Ver_Laudimir.jpg" alt="..."class="img-thumbnail">
+                        <br/>Laudimir Rodrigues</a></div>
+                        
+                  <div class="col-sm-1" id="estilo_fonte_pequena" > </div>      
+                        <div class="col-sm-1" id="estilo_fonte_pequena" ><a href="#"><img id="dario" src="imagens/Ver_Luiz.jpg" alt="..." class="img-thumbnail"> 
+                        <br/>Luiz Paulo Glória</a></div>
+                        
+<div class="col-sm-1" id="estilo_fonte_pequena" > </div>
+                        <div class="col-sm-1" id="estilo_fonte_pequena" ><a href="#"><img id="dario" src="imagens/Ver_Maria.jpg" alt="..." class="img-thumbnail"> 
+                        <br/>Maria Doriléia</a></div>
+
+<div class="col-sm-1" id="estilo_fonte_pequena" > </div>
+                        <div class="col-sm-1" id="estilo_fonte_pequena" ><a href="#"><img id="dario" src="imagens/Ver_Julimar.jpg" alt="..." class="img-thumbnail">
+                        <br/>Pastor Julimar</a></div>
+         <div class="col-sm-1" id="estilo_fonte_pequena" > </div>               
+
+
+                        <div class="col-sm-1" id="estilo_fonte_pequena" ><a href="#"><img id="dario" src="imagens/Ver_Reinaldo.jpg" alt="..." class="img-thumbnail"> 
+                        <br/>Reinaldo Xavier</a></div>
+                    </div>
+                    <hr style="border-top: 1px solid #fff;">
+               
+            
+             
+
+
+            </div>   
+    </div> <!-- Fim do container Geral -->           
+
+              
+                  <!--
+                  <div id="detalhe" class="transparencia-300 transparencia">
+                      
+                  </div>
+                  -->
+              
+              <div class="panel-footer" id="rodape">
+        
+                      <div class="col-sm-4" id="rodape-01">
+                            <b>Câmara Municipal de Curvelo </b>
+                            <br/>
+                            Rua Guimarães Rosa, 680 - Bela Vista - Curvelo - MG 
+                            <br>
+                            CEP: 35.790-000
+                            <br>
+                            e-mail: <a href="mailto:camara@cmcurvelo.mg.gov.br">camara@cmcurvelo.mg.gov.br </a> 
+                            <br> <b> Telefone: </b>(38) 3721 . 2955
+                            <br> <b> Telefone: </b>(38) 3721 . 7880
+                            <br/><a href="https://facebook.com/camaradecurvelo" target="_blank">Facebook</a>  &nbsp  &nbsp |&nbsp  &nbsp <a href="https://www.youtube.com/channel/UCG9Wxk7S1sQIAFzXwDETk1Q" target="_blank">Youtube</a>
+                            <p> </p>                         
+                      </div>
+
+                      <div class="col-sm-4">                         
+                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3777.8294297123894!2d-44.442990885103605!3d-18.761154487269337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e2db232289211%3A0x126d48e155808b8!2sC%C3%A2mara+Municipal+de+Curvelo!5e0!3m2!1spt-BR!2sbr!4v1501076603714" width="400" height="200" frameborder="0" style="border:0; position:relative;width:100%;height:100%;" allowfullscreen ></iframe>
+                      </div>     
+
+                      <div class="col-sm-4">
+                         <p><b>©Copyright (2017) <br> Desenvolvido por Câmara Municipal de Curvelo</b> </p>
+                      </div>   
+
+              </div><!-- Fim do rodapé -->
+          
+    
+  </div> <!-- fim do conteúdo -->
+</body>
+</html>
